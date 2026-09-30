@@ -1,0 +1,34 @@
+@model List<WtLab3Mvc.Models.Car>
+@{ ViewData["Title"] = "Автопарк"; }
+
+<h1>Автопарк (MVC)</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Добавить автомобиль</a>
+    <a href="/razor/cars" class="btn btn-outline-secondary">Razor Pages →</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th><th>Марка</th><th>Модель</th><th>Год</th><th>Цена/день</th><th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.Id</td>
+                <td>@car.Brand</td>
+                <td>@car.Model</td>
+                <td>@car.Year</td>
+                <td>@car.PricePerDay.ToString("C")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@car.Id">Просмотр</a> |
+                    <a asp-action="Edit" asp-route-id="@car.Id">Ред.</a> |
+                    <a asp-action="Delete" asp-route-id="@car.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

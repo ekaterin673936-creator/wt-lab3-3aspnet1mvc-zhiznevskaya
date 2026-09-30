@@ -1,0 +1,26 @@
+@page "/razor/cars/edit/{id:int}"
+@model WtLab3Mvc.Pages.Cars.EditModel
+@{ ViewData["Title"] = "Редактировать (Razor)"; }
+
+<h1>Редактировать (Razor Pages)</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Form.Brand" class="form-label">Марка</label>
+        <input asp-for="Form.Brand" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.Model" class="form-label">Модель</label>
+        <input asp-for="Form.Model" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.Year" class="form-label">Год</label>
+        <input asp-for="Form.Year" class="form-control" type="number" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Form.PricePerDay" class="form-label">Цена/день</label>
+        <input asp-for="Form.PricePerDay" class="form-control" type="number" step="100" />
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-page="Index" class="btn btn-secondary">Отмена</a>
+</form>

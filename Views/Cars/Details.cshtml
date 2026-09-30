@@ -1,0 +1,27 @@
+@model WtLab3Mvc.Models.Car
+@{
+    ViewData["Title"] = "Информация об автомобиле";
+}
+
+<h1>Информация об автомобиле</h1>
+
+<dl class="row">
+    <dt class="col-sm-3">Id</dt>
+    <dd class="col-sm-9">@Model.Id</dd>
+
+    <dt class="col-sm-3">Марка</dt>
+    <dd class="col-sm-9">@Model.Brand</dd>
+
+    <dt class="col-sm-3">Модель</dt>
+    <dd class="col-sm-9">@Model.Model</dd>
+
+    <dt class="col-sm-3">Год выпуска</dt>
+    <dd class="col-sm-9">@Model.Year</dd>
+
+    <dt class="col-sm-3">Цена аренды за день</dt>
+    <dd class="col-sm-9">@Model.PricePerDay.ToString("C")</dd>
+</dl>
+
+<p>
+    <a asp-action="Index" class="btn btn-secondary">Назад к списку</a>
+</p>

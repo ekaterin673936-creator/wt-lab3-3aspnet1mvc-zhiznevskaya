@@ -1,0 +1,27 @@
+@model WtLab3Mvc.Models.CarCreateModel
+@{
+    ViewData["Title"] = "Добавить автомобиль";
+}
+
+<h1>Добавить автомобиль</h1>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Brand" class="form-label">Марка</label>
+        <input asp-for="Brand" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Model" class="form-label">Модель</label>
+        <input asp-for="Model" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Year" class="form-label">Год выпуска</label>
+        <input asp-for="Year" class="form-control" type="number" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="PricePerDay" class="form-label">Цена/день</label>
+        <input asp-for="PricePerDay" class="form-control" type="number" step="100" />
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

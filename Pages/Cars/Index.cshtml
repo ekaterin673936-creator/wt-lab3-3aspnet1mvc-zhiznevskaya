@@ -1,0 +1,34 @@
+@page "/razor/cars"
+@model WtLab3Mvc.Pages.Cars.IndexModel
+@{ ViewData["Title"] = "Автопарк (Razor Pages)"; }
+
+<h1>Автопарк (Razor Pages)</h1>
+
+<p>
+    Всего: <strong>@Model.Cars.Count()</strong>
+    <a href="/Cars" class="btn btn-outline-secondary btn-sm">MVC →</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th><th>Марка</th><th>Модель</th><th>Год</th><th>Цена/день</th><th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model.Cars)
+        {
+            <tr>
+                <td>@car.Id</td>
+                <td>@car.Brand</td>
+                <td>@car.Model</td>
+                <td>@car.Year</td>
+                <td>@car.PricePerDay.ToString("C")</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@car.Id">Ред.</a> |
+                    <a asp-page="Delete" asp-route-id="@car.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
